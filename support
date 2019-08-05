@@ -1,0 +1,10 @@
+・画面サイズについて
+DxLib_Init()の後に「SetGraphMode」を呼び出す。前に呼び出しても効果はない。
+
+
+・スマートフォンの縦固定横固定
+ファイル内の「AndroidManifest.xml」にて
+「<activity android:name="android.app.NativeActivity" android:label="@string/app_name" android:configChanges="orientation|screenSize" android:launchMode="singleInstance">」
+のところにこのような感じで追加する。これは横固定。
+「<activity android:name="android.app.NativeActivity" android:label="@string/app_name" android:configChanges="orientation|screenSize" android:launchMode="singleInstance" android:screenOrientation="landscape">」
+縦固定なら「android:screenOrientation="portrait"」にする。
